@@ -35,3 +35,15 @@ jest-test-results.json
 
 # Optional: if using TurboRepo or monorepo
 turbo/
+
+# Large binary files (Supabase CLI and archives)
+supabase.exe
+supabase_windows_amd64.tar.gz
+supabase/.temp/
+
+# Other large binaries
+*.exe
+*.tar.gz
+*.zip
+*.dmg
+*.pkg
