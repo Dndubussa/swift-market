@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Blinno Brand Colors - Extracted from logo */
+    --color-primary: #2B5AA3; /* Deep blue from logo */
+    --color-primary-hover: #1E4278; /* Darker blue for hover states */
+    --color-secondary: #4A90E2; /* Light blue accent */
+    --color-accent: #F5A623; /* Orange/yellow accent from logo */
+    --color-success: #27AE60; /* Green for success states */
+    --color-warning: #F39C12; /* Warning yellow */
+    --color-danger: #E74C3C; /* Error red */
+    
+    /* Neutral colors */
+    --color-background: #FFFFFF;
+    --color-surface: #F8F9FA;
+    --color-border: #E0E0E0;
+    --color-input: #E0E0E0;
+    --color-ring: #2B5AA3;
+    --color-foreground: #2C3E50;
+    --color-text-primary: #2C3E50;
+    --color-text-secondary: #7F8C8D;
+    --color-text-muted: #BDC3C7;
+    
+    /* Component colors */
+    --color-muted: #F1F5F9;
+    --color-muted-foreground: #64748B;
+    --color-popover: #FFFFFF;
+    --color-popover-foreground: #2C3E50;
+    --color-card: #FFFFFF;
+    --color-card-foreground: #2C3E50;
+    --color-primary-foreground: #FFFFFF;
+    --color-secondary-foreground: #FFFFFF;
+    --color-destructive: #E74C3C;
+    --color-destructive-foreground: #FFFFFF;
+    --color-accent-foreground: #2C3E50;
+    --color-success-foreground: #FFFFFF;
+    --color-warning-foreground: #2C3E50;
+    --color-error: #E74C3C;
+    --color-error-foreground: #FFFFFF;
+    
+    /* Tier badge colors */
+    --tier-bronze: #CD7F32;
+    --tier-silver: #C0C0C0;
+    --tier-gold: #FFD700;
+    --tier-platinum: #E5E4E2;
+    --tier-diamond: #B9F2FF;
+  }
+}
+
+@layer components {
+  /* Homepage specific animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+  
+  /* Line clamp utilities */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  /* Custom keyframes */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(var(--rotate, 0deg));
+    }
+    50% {
+      transform: translateY(-20px) rotate(var(--rotate, 0deg));
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+  }
+}
